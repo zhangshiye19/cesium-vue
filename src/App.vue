@@ -1,28 +1,31 @@
-<script setup lang="ts">
+<script lang="ts">
 // import HelloWorld from './components/HelloWorld.vue'
 import * as Cesium from 'cesium'
-import { onMounted, ref } from 'vue'
+import CMap from "./map/cmap.ts";
+// import { onMounted, ref } from 'vue'
 
-const container = ref<any>('container')
-onMounted(() => {
-  const viewer = new Cesium.Viewer('cesiumContainer',{
-    infoBox: false
-  })
-  // console.log(viewer)
-})
+// const container = ref<any>('container')
+// onMounted(() => {
+//   const viewer = new Cesium.Viewer('cesiumContainer',{
+//     infoBox: false
+//   })
+//   // console.log(viewer)
+// })
+
+export default {
+  data() {
+    return {
+        viewer: Cesium.Viewer
+    }
+  },
+  mounted() {
+    this.viewer = CMap.getInstance().viewer
+  }
+}
 
 </script>
 
 <template>
-  <!-- <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" /> -->
   <div id="cesiumContainer" class="container" ref="container">
   </div>
 </template>
@@ -31,7 +34,7 @@ onMounted(() => {
 
 .container {
   height: 100%;
-  widows: 100%;
+  width: 100%;
 }
 
 .logo {
