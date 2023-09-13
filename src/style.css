@@ -29,7 +29,7 @@ html,body {
 
 body {
   margin: 0;
-  display: flex;
+  /* display: flex; */
   height: 100%;
   place-items: center;
   min-width: 320px;

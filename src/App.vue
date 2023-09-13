@@ -1,43 +1,37 @@
 <script lang="ts">
-// import HelloWorld from './components/HelloWorld.vue'
-import * as Cesium from 'cesium'
-import CMap from "./map/cmap.ts";
-// import { onMounted, ref } from 'vue'
 
-// const container = ref<any>('container')
-// onMounted(() => {
-//   const viewer = new Cesium.Viewer('cesiumContainer',{
-//     infoBox: false
-//   })
-//   // console.log(viewer)
-// })
+import MapContainer from "@/components/MapContainer/MapContainer.vue";
 
 export default {
+  components: {MapContainer},
   data() {
     return {
-        viewer: Cesium.Viewer
-    }
+      // viewer: Cesium.Viewer
+    };
   },
   mounted() {
-    this.viewer = CMap.getInstance().viewer
+    // this.viewer = CMap.getInstance().viewer
   }
 }
 
 </script>
 
 <template>
-  <div id="cesiumContainer" class="container" ref="container">
+  <!-- <Map></Map> -->
+  <div style="width: 100%;height: 100%;">
+    <!--    <OLMapContainer />-->
+    <MapContainer/>
   </div>
 </template>
 
 <style scoped>
 
-.container {
+/* .container {
   height: 100%;
   width: 100%;
-}
+} */
 
-.logo {
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -48,5 +42,5 @@ export default {
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
-}
+} */
 </style>

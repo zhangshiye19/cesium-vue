@@ -7,6 +7,7 @@ import htmlPlugin from 'vite-plugin-html-config'
 import path from 'node:path'
 import { normalizePath } from 'vite'
 
+// const path = require('path')
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -27,6 +28,10 @@ export default defineConfig({
           rel: 'stylesheet',
           href: './Widgets/widgets.css'
         }
+        // {
+        //   rel: 'stylesheet',
+        //   href: './ol/ol.css'
+        // }
       ],
       scripts: [  // 默认先执行执行脚本
         `window['CESIUM_BASE_URL'] = './'`
@@ -45,7 +50,11 @@ export default defineConfig({
         {
           src: normalizePath(path.resolve(__dirname,'node_modules/cesium/Build/Cesium/Assets/*')),
           dest: 'Assets'
-        }
+        },
+        // {
+        //   src: normalizePath(path.resolve(__dirname,'node_modules/ol/ol.css')),
+        //   dest: 'ol'
+        // }
       ]
     }),
   ],

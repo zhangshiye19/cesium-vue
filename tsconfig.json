@@ -4,6 +4,10 @@
     "useDefineForClassFields": true,
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]  // 这里需要配置
+    },
     "skipLibCheck": true,
 
     /* Bundler mode */
